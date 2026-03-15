@@ -38,52 +38,7 @@ Task.Run(async () =>
             var context = services.GetRequiredService<HealthcareDbContext>();
             var hasher = services.GetRequiredService<IPasswordHasher<User>>();
             
-            // Ensure the database is created
-            await context.Database.EnsureCreatedAsync();
-            
-            // Seed Admin user if not exists
-            if (!context.Users.Any(u => u.Role == "Admin"))
-            {
-                var adminUser = new User
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    Email = "admin@healthcare.com",
-                    Role = "Admin",
-                    CreatedAt = DateTime.Now
-                };
-                adminUser.Password = hasher.HashPassword(adminUser, "Admin@123");
-                context.Users.Add(adminUser);
-                await context.SaveChangesAsync();
-            }
-            
-            // Seed sample doctor if not exists
-            if (!context.Doctors.Any())
-            {
-                var doctorUser = new User
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    Email = "doctor@healthcare.com",
-                    Role = "Doctor",
-                    CreatedAt = DateTime.Now
-                };
-                doctorUser.Password = hasher.HashPassword(doctorUser, "Doctor@123");
-                context.Users.Add(doctorUser);
-                await context.SaveChangesAsync();
-                
-                var doctor = new Doctor
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    UserId = doctorUser.Id,
-                    FirstName = "Doctor",
-                    LastName = "1",
-                    Specialization = "General Practice",
-                    Phone = "+20 100 000 0001",
-                    Email = "doctor@healthcare.com",
-                    CreatedAt = DateTime.Now
-                };
-                context.Doctors.Add(doctor);
-                await context.SaveChangesAsync();
-            }
+            await DbSeeder.SeedData(context, hasher);
         }
         catch (Exception ex)
         {

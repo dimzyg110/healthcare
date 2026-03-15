@@ -7,6 +7,10 @@ A modern, full-featured healthcare management system built with ASP.NET Core MVC
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=flat-square&logo=bootstrap&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
+### Application Walkthrough
+![Healthcare System Demo](screenshots/demo.webp)
+
+
 ## Features
 
 ### Multi-Role Authentication
@@ -87,51 +91,23 @@ A modern, full-featured healthcare management system built with ASP.NET Core MVC
 
 - Google Drive: https://drive.google.com/file/d/1-EcKY9ZqXjNRJrl8OR0lBEwXjDp0R6iL/view?usp=sharing
 
-## 📸 Screenshots
+## 📸 Screenshots & Demo
 
-### Login & Registration
+### Login
 ![Login Page](screenshots/login.png)
-*User authentication screen with email and password*
-
-![Registration Page](screenshots/register.png)
-*New user registration form*
+*User authentication screen*
 
 ### Admin Dashboard
 ![Admin Dashboard](screenshots/admin-dashboard.png)
 *Admin panel with system statistics and user management*
 
-### Doctor Dashboard
-![Doctor Dashboard](screenshots/doctor-dashboard.png)
-*Doctor dashboard showing appointments and patient schedule*
-
-### Patient Dashboard
-![Patient Dashboard](screenshots/patient-dashboard.png)
-*Patient health overview and appointment history*
-
-### Appointment System
-![Appointment Calendar](screenshots/appointment-calendar.png)
-*Interactive calendar for booking and managing appointments*
-
-![Appointment Details](screenshots/appointment-details.png)
-*Detailed view of appointment information*
-
-### Medical Records
-![Medical Records](screenshots/medical-records.png)
-*Patient medical history and health records management*
-
-### Prescriptions
-![Prescription List](screenshots/prescription-list.png)
-*Digital prescription management system*
-
-![Prescription Print](screenshots/prescription-print.png)
-*Prescription printing functionality*
-
-### Doctor Management
+### Doctor Directory
 ![Doctor Directory](screenshots/doctor-directory.png)
 *List of all doctors with specializations and fees*
 
-![Doctor Details](screenshots/doctor-details.png)
-*Individual doctor profile and consultation information*
+### Patient List
+![Patient List](screenshots/patient-list.png)
+*Patient health overview and management*
 
 ## 📁 Project Structure
 
