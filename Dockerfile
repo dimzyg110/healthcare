@@ -20,10 +20,12 @@ COPY --from=build /app/publish .
 COPY healthcare.db .
 
 # Set environment variables
-ENV ASPNETCORE_URLS=http://+:${PORT:-8080}
+ARG PORT=8080
+ENV PORT=${PORT}
 ENV ASPNETCORE_ENVIRONMENT=Production
 
 # Expose port
 EXPOSE 8080
 
-ENTRYPOINT ["dotnet", "HealthcareSystem.dll"]
+# Use shell form so $PORT is expanded at runtime
+CMD dotnet HealthcareSystem.dll --urls "http://+:${PORT}"
